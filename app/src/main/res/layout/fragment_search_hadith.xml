@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.SearchHadithFragment">
+
+   <EditText
+       android:id="@+id/et_search_hadith"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:textColor="@android:color/black"
+       android:drawableLeft="@drawable/ic_search"
+       android:padding="@dimen/_10sdp"
+       android:layout_margin="@dimen/_10sdp"
+       android:drawablePadding="@dimen/_5sdp"
+       android:hint="Search"
+
+       />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <RadioButton
+            android:id="@+id/radioEng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="English"/>
+        <RadioButton
+            android:id="@+id/radioUrdu"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Urdu"/>
+        <RadioButton
+            android:id="@+id/radioHadees"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hadees No."/>
+        <RadioButton
+            android:id="@+id/radioRavi"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ravi"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/btnSearch"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:padding="@dimen/_5sdp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="@drawable/home_button_bg"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        />
+
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#343C8D</color>
+    <color name="colorPrimaryDark">#010D73</color>
+    <color name="colorAccent">#767DB4</color>
+    <color name="colorSeparator">#D1D1D1</color>
+    <color name="colorLightBlue">#767DB4</color>
+
+
+    <!--colorPrimar: #11405E-->
+    <!--colorLightBue: #0084C8-->
+    <!--colorAccent: #0084C8-->
+    <!--colorPrimaryDark: #043353-->
+</resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ref_container"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/content_container"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_10sdp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@android:color/black"
+        android:gravity="center_horizontal"
+        android:text="Reference"
+        android:textStyle="bold"
+        android:padding="@dimen/_5sdp"/>
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/black"
+    android:text="Baab"
+    android:textSize="@dimen/_12ssp"
+    android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_baab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Baab"
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Volume"
+        android:textSize="@dimen/_12ssp"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_volume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text=""
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Book"
+        android:textSize="@dimen/_12ssp"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text=""
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Status"
+        android:textSize="@dimen/_12ssp"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text=""
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Status Ref"
+        android:textSize="@dimen/_12ssp"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_statusRef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text=""
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Takhreej"
+        android:textSize="@dimen/_12ssp"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_takhreej"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text=""
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"/>
+
+    <TextView
+        android:id="@+id/tv_wazahat_Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Wazahat"
+        android:textSize="@dimen/_12ssp"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tv_ref_wazahat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text=""
+        android:gravity="right"
+        android:textSize="@dimen/_12ssp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"/>
+
+
+
+</LinearLayout>
+
+   <TextView
+       android:id="@+id/dialog_Ok"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="OK"
+       android:textColor="@color/colorPrimary"
+       android:textSize="@dimen/_14ssp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/content_container"
+       android:layout_margin="@dimen/_20sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

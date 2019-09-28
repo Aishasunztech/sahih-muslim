@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Sahih Muslim</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_name">Book: Sahih Muslim  </string>
+    <string name="bookNameToolbar">Sahih Muslim #</string>
+    <string name="sahih_bukhari">Sahih Muslim</string>
+    <string name="app_title">Al-Muslim</string>
+
+
+    <!--    Testing Ids-->
+<!--    <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>-->
+<!--    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--    <string name="interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
+    <!--    Real Ids-->
+    <string name="app_id">ca-app-pub-9166385430984549~6364083869</string>
+    <string name="banner_id">ca-app-pub-9166385430984549/1860079685</string>
+    <string name="interstitial_id">ca-app-pub-9166385430984549/4294671337</string>
+
+</resources>
