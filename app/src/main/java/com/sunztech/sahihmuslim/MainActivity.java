@@ -25,7 +25,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.sunztech.sahihmuslim.MyApplication.numberOfClicks;
+import static com.sunztech.sahihmuslim.Utilities.AppConstants.IS_ALARM_SET;
 import static com.sunztech.sahihmuslim.Utilities.AppConstants.counter;
+import static com.sunztech.sahihmuslim.Utilities.MyUtils.getBooleanPref;
+import static com.sunztech.sahihmuslim.Utilities.MyUtils.setAlarmManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -76,16 +79,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdClosed() {
-                if(isChapters)
-                {
+                if (isChapters) {
                     Intent intent = new Intent(MainActivity.this, BookDetailsActivity.class);
                     startActivity(intent);
-                }else{
+                } else {
                     Intent intent = new Intent(MainActivity.this, BookMarkActivity.class);
                     startActivity(intent);
                 }
             }
         });
+
+        boolean isAlarmSet = getBooleanPref(this, IS_ALARM_SET);
+        if (!isAlarmSet) {
+            setAlarmManager(this, System.currentTimeMillis() +86400000L);
+        }
 
     }
 
@@ -120,13 +127,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoBookMark(View view) {
-        if(numberOfClicks % counter == 0)
-        {
+        if (numberOfClicks % counter == 0) {
             mInterstitialAd.loadAd(new AdRequest.Builder().build());
             isChapters = false;
             numberOfClicks++;
 
-        }else{
+        } else {
             Intent intent = new Intent(this, BookMarkActivity.class);
             startActivity(intent);
             numberOfClicks++;
@@ -136,13 +142,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoHadith(View view) {
-        if(numberOfClicks % counter == 0)
-        {
+        if (numberOfClicks % counter == 0) {
             mInterstitialAd.loadAd(new AdRequest.Builder().build());
             isChapters = true;
             numberOfClicks++;
 
-        }else{
+        } else {
             Intent intent = new Intent(this, BookDetailsActivity.class);
             startActivity(intent);
             numberOfClicks++;
@@ -150,8 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void shareBook(View view)
-    {
+    public void shareBook(View view) {
         MyUtils.shareApp("https://play.google.com/store/apps/details?id=" + this.getPackageName(), this);
     }
 

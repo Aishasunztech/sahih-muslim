@@ -15,11 +15,11 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id"/>
-        <activity android:name="com.sunztech.sahihmuslim.BookMarkActivity"></activity>
-        <activity android:name="com.sunztech.sahihmuslim.HadithDetailsActivity" />
-        <activity android:name="com.sunztech.sahihmuslim.ChapterDetailsActivity" />
-        <activity android:name="com.sunztech.sahihmuslim.BookDetailsActivity" />
-        <activity android:name="com.sunztech.sahihmuslim.MainActivity">
+        <activity android:name="com.sunztech.sahihmuslim.BookMarkActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.sunztech.sahihmuslim.HadithDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.sunztech.sahihmuslim.ChapterDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.sunztech.sahihmuslim.BookDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.sunztech.sahihmuslim.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

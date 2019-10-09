@@ -15,5 +15,7 @@ public class AppConstants {
     public static final String SEARCHING_VALUE = "searching_value";
     public static ArrayList<HadithItem> CURRENT_HADITH_LIST = new ArrayList<>();
     public static final int counter = 5;
+    public static final String NOTIFICATION_PREFS = "notifications_prefs";
+    public static final String IS_ALARM_SET = "IS_ALARM_SET";
 
 }
