@@ -53,7 +53,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         changeTabFont(tabLayout,this);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
