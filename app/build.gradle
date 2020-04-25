@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.sunztech.sahihmuslim"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 6
-        versionName "1.6"
+        versionCode 8
+        versionName "1.8"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -38,7 +39,7 @@ dependencies {
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
 
     //Ads
-    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+    implementation 'com.google.android.gms:play-services-ads:15.0.0'
 
 
 
@@ -50,4 +51,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+
+    // Add the Firebase  dependency.
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+    // Add the Firebase Crashlytics dependency.
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+
 }

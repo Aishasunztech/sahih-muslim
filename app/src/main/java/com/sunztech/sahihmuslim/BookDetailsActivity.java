@@ -14,8 +14,7 @@ import android.widget.EditText;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+ ;
 import com.google.android.material.tabs.TabLayout;
 import com.sunztech.sahihmuslim.Adapters.MainPagerAdapter;
 import com.sunztech.sahihmuslim.Utilities.MyUtils;
@@ -53,11 +52,14 @@ public class BookDetailsActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         changeTabFont(tabLayout,this);
 
-         MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        /*   MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
-        });
+
+        });*/
+        MobileAds.initialize(this,
+                getString(R.string.app_id));
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
