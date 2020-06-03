@@ -1,5 +1,6 @@
 package com.sunztech.sahihmuslim;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -193,4 +194,26 @@ public class MainActivity extends AppCompatActivity {
         MyUtils.shareApp("https://play.google.com/store/apps/details?id=" + this.getPackageName(), this);
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setCancelable(false);
+        dialog.setTitle("Alert!");
+        dialog.setMessage("Are you sure you want to close this app?");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                MainActivity.super.onBackPressed();
+            }
+        }).setNegativeButton("No ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        final AlertDialog alert = dialog.create();
+        alert.show();
+
+    }
 }
