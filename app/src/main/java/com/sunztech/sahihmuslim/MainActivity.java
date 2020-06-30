@@ -126,10 +126,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+/*
         new Handler().postDelayed(() -> {
             Intent mainIntent = new Intent(MainActivity.this, StaticAddActivity.class);
             startActivity(mainIntent);
         }, 500);
+*/
 
     }
 
