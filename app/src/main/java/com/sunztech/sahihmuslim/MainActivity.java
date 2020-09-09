@@ -116,13 +116,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdClosed() {
-                if (isChapters) {
-                    Intent intent = new Intent(MainActivity.this, BookDetailsActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(MainActivity.this, BookMarkActivity.class);
-                    startActivity(intent);
-                }
             }
         });
 
@@ -166,32 +159,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoBookMark(View view) {
-        if (numberOfClicks % counter == 0) {
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            isChapters = false;
-            numberOfClicks++;
-
-        } else {
             Intent intent = new Intent(this, BookMarkActivity.class);
             startActivity(intent);
             numberOfClicks++;
-        }
-
-
     }
 
     public void gotoHadith(View view) {
-        if (numberOfClicks % counter == 0) {
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            isChapters = true;
-            numberOfClicks++;
-
-        } else {
             Intent intent = new Intent(this, BookDetailsActivity.class);
             startActivity(intent);
             numberOfClicks++;
-        }
-
     }
 
     public void shareBook(View view) {
@@ -220,4 +196,17 @@ public class MainActivity extends AppCompatActivity {
         alert.show();
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (numberOfClicks % counter == 0) {
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            isChapters = true;
+            numberOfClicks++;
+        }
+
+    }
+
 }
