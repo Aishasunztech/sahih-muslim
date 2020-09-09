@@ -16,8 +16,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+ ;
 import com.sunztech.sahihmuslim.Adapters.BookMarkAdapter;
 import com.sunztech.sahihmuslim.BackgroundTasks.GetBookmarksTask;
 import com.sunztech.sahihmuslim.Models.HadithItem;
@@ -58,11 +57,14 @@ public class BookMarkActivity extends AppCompatActivity implements GetBookmarksT
         MyUtils.changeToolbarFont(toolbar, this);
 
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+       /*   MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
-        });
+
+        });*/
+        MobileAds.initialize(this,
+                getString(R.string.app_id));
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

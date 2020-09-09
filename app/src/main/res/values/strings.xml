@@ -10,12 +10,11 @@
 
 
     <!--    Testing Ids-->
-<!--    <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>-->
-<!--    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--    <string name="interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
+  <!--  <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
     <!--    Real Ids-->
     <string name="app_id">ca-app-pub-9166385430984549~6364083869</string>
-    <string name="banner_id">ca-app-pub-9166385430984549/1860079685</string>
-    <string name="interstitial_id">ca-app-pub-9166385430984549/4294671337</string>
-
+    <string name="banner_id">ca-app-pub-9166385430984549/2197938995</string>
+    <string name="interstitial_id">ca-app-pub-9166385430984549/6875550603</string>
 </resources>

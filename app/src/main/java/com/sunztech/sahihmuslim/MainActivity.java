@@ -1,8 +1,11 @@
 package com.sunztech.sahihmuslim;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,8 +20,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+;
 import com.sunztech.sahihmuslim.Utilities.MyUtils;
 
 import butterknife.BindView;
@@ -54,13 +56,51 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+
+      /*   MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
-        });
 
+        });*/
+
+        MobileAds.initialize(this,
+                getString(R.string.app_id));
         AdRequest adRequest = new AdRequest.Builder().build();
+        mAdview.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                Log.d("", "onAdFailedToLoad: " + errorCode);
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            @Override
+            public void onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        });
         mAdview.loadAd(adRequest);
 
         mInterstitialAd = new InterstitialAd(this);
@@ -76,16 +116,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdClosed() {
-                if(isChapters)
-                {
-                    Intent intent = new Intent(MainActivity.this, BookDetailsActivity.class);
-                    startActivity(intent);
-                }else{
-                    Intent intent = new Intent(MainActivity.this, BookMarkActivity.class);
-                    startActivity(intent);
-                }
             }
         });
+
+/*
+        new Handler().postDelayed(() -> {
+            Intent mainIntent = new Intent(MainActivity.this, StaticAddActivity.class);
+            startActivity(mainIntent);
+        }, 500);
+*/
 
     }
 
@@ -120,39 +159,54 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoBookMark(View view) {
-        if(numberOfClicks % counter == 0)
-        {
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            isChapters = false;
-            numberOfClicks++;
-
-        }else{
             Intent intent = new Intent(this, BookMarkActivity.class);
             startActivity(intent);
             numberOfClicks++;
-        }
-
-
     }
 
     public void gotoHadith(View view) {
-        if(numberOfClicks % counter == 0)
-        {
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            isChapters = true;
-            numberOfClicks++;
-
-        }else{
             Intent intent = new Intent(this, BookDetailsActivity.class);
             startActivity(intent);
             numberOfClicks++;
-        }
+    }
+
+    public void shareBook(View view) {
+        MyUtils.shareApp("https://play.google.com/store/apps/details?id=" + this.getPackageName(), this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setCancelable(false);
+        dialog.setTitle("Alert!");
+        dialog.setMessage("Are you sure you want to close this app?");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                MainActivity.super.onBackPressed();
+            }
+        }).setNegativeButton("No ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        final AlertDialog alert = dialog.create();
+        alert.show();
 
     }
 
-    public void shareBook(View view)
-    {
-        MyUtils.shareApp("https://play.google.com/store/apps/details?id=" + this.getPackageName(), this);
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (numberOfClicks % counter == 0) {
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            isChapters = true;
+            numberOfClicks++;
+        }
+
     }
 
 }

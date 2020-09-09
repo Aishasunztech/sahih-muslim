@@ -11,10 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".StaticAddActivity" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id"/>
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
         <activity android:name="com.sunztech.sahihmuslim.BookMarkActivity"></activity>
         <activity android:name="com.sunztech.sahihmuslim.HadithDetailsActivity" />
         <activity android:name="com.sunztech.sahihmuslim.ChapterDetailsActivity" />
